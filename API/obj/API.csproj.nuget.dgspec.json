@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\ProjetoWeb\\Ecommerce\\API\\API.csproj": {}
+    "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\ProjetoWeb\\Ecommerce\\API\\API.csproj": {
+    "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\ProjetoWeb\\Ecommerce\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\ProjetoWeb\\Ecommerce\\API\\API.csproj",
+        "projectPath": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\API.csproj",
         "packagesPath": "C:\\Users\\ENZORICARDOHASHIMOTO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\ProjetoWeb\\Ecommerce\\API\\obj\\",
+        "outputPath": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ENZORICARDOHASHIMOTO\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -1,0 +1,19 @@
+### Requisição
+
+
+
+
+### Listar todos os produtos
+GET http://localhost:5055/api/produto/listar
+
+### Cadastrar Produto
+
+POST http://localhost:5055/api/produto/cadastrar
+Content-Type: application/json
+
+{
+    "nome" : "Mouse",
+    "quantidade" : 123,
+    "preco" : 124.45
+}
+
