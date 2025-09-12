@@ -1,0 +1,26 @@
+### Requisição
+
+GET http://localhost:5055/
+
+
+### Listar todos os produtos
+GET http://localhost:5055/api/produto/listar
+
+### Cadastrar Produto
+
+POST http://localhost:5055/api/produto/cadastrar
+Content-Type: application/json
+
+{
+    "nome" : "Headset",
+    "quantidade" : 123,
+    "preco" : 124.45
+}
+
+
+### Buscar Produtos por nome
+
+GET  http://localhost:5055/api/produto/buscar
+
+
+
