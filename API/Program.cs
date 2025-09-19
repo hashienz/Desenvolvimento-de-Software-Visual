@@ -92,5 +92,6 @@ app.MapPatch("/api/produto/alterar/{id}", ([FromRoute] string id,
 
 app.Run();
 
+AppDataContext ctx = new AppDataContext();
 
 

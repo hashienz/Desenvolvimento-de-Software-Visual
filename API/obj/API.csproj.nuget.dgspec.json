@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\API.csproj": {}
+    "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\api\\API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\API.csproj": {
+    "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\api\\API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\API.csproj",
+        "projectUniqueName": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\api\\API.csproj",
         "projectName": "API",
-        "projectPath": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\API.csproj",
+        "projectPath": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\api\\API.csproj",
         "packagesPath": "C:\\Users\\ENZORICARDOHASHIMOTO\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\obj\\",
+        "outputPath": "C:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ENZORICARDOHASHIMOTO\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -42,6 +42,18 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.20, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.20, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
