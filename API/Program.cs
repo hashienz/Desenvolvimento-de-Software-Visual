@@ -41,7 +41,7 @@ app.MapPost("/api/produto/cadastrar", ([FromBody] Produto produto) =>
 
 });
 
-app.MapGet("/api/produto/buscar/{nome}", ([FromBody] string nome) =>
+app.MapGet("/api/produto/buscar/{nome}", ([FromRoute] string nome) =>
 {
     //Expressão lambda
     // Produto resultado = listaDeProdutos.FirstOrDefault(x => x.Nome.Contains(nome));
@@ -52,6 +52,39 @@ app.MapGet("/api/produto/buscar/{nome}", ([FromBody] string nome) =>
         return Results.NotFound("Produto não encontrado");
     }
     return Results.Ok(resultado);
+
+});
+
+app.MapDelete("/api/produto/deletar/{nome}", ([FromRoute] string nome) =>
+{
+    Produto? deletado = listaDeProdutos.FirstOrDefault(x => x.Nome == nome);
+    if (deletado == null)
+    {
+        return Results.NotFound("Produto não encontrado");
+    }
+
+    listaDeProdutos.Remove(deletado);
+
+
+    return Results.Ok(deletado);   
+
+});
+
+// Alteral produto pelo id
+app.MapPatch("/api/produto/alterar/{id}", ([FromRoute] string id,
+[FromBody] Produto produtoAlterado) =>
+{
+    Produto? alterado = listaDeProdutos.FirstOrDefault(x => x.Id == id);
+    if (alterado == null)
+    {
+        return Results.NotFound("Produto não encontrado");
+    }
+    alterado.Nome = produtoAlterado.Nome;
+    alterado.Quantidade = produtoAlterado.Quantidade;
+    alterado.Preco = produtoAlterado.Preco;
+
+    
+    return Results.Ok(alterado);   
 
 });
 

@@ -6,6 +6,11 @@ GET http://localhost:5055/
 ### Listar todos os produtos
 GET http://localhost:5055/api/produto/listar
 
+### Buscar Produtos por nome
+
+GET  http://localhost:5055/api/produto/buscar/
+
+
 ### Cadastrar Produto
 
 POST http://localhost:5055/api/produto/cadastrar
@@ -16,11 +21,21 @@ Content-Type: application/json
     "quantidade" : 123,
     "preco" : 124.45
 }
+ 
 
+### Deletar Produto
 
-### Buscar Produtos por nome
+DELETE   http://localhost:5055/api/produto/deletar/Headset
 
-GET  http://localhost:5055/api/produto/buscar
+### Alterar Produto
 
+PATCH    http://localhost:5055/api/produto/alterar/35c42608-1881-4c5b-adcd-92bf8c651275
+Content-Type: application/json
+
+{
+    "nome" : "Headset novo",
+    "quantidade" : 999,
+    "preco" : 599
+}
 
 

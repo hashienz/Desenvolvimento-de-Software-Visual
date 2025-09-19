@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\ENZORICARDOHASHIMOTO\\Downloads\\Desenvolvimento-de-Software-Visual\\API\\API.csproj",
+      "projectUniqueName": "c:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\API.csproj",
       "projectName": "API",
-      "projectPath": "c:\\Users\\ENZORICARDOHASHIMOTO\\Downloads\\Desenvolvimento-de-Software-Visual\\API\\API.csproj",
+      "projectPath": "c:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\API.csproj",
       "packagesPath": "C:\\Users\\ENZORICARDOHASHIMOTO\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\ENZORICARDOHASHIMOTO\\Downloads\\Desenvolvimento-de-Software-Visual\\API\\obj\\",
+      "outputPath": "c:\\Users\\ENZORICARDOHASHIMOTO\\Documents\\Desenvolvimento-de-Software-Visual\\API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ENZORICARDOHASHIMOTO\\AppData\\Roaming\\NuGet\\NuGet.Config"
