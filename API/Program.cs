@@ -1,7 +1,10 @@
-using API.Models;
+            using API.Models;
 using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
+//adicionar o serviço de banco de dados na aplicação
+builder.Services.AddDbContext<AppDataContext>();
+
 var app = builder.Build();
 
 // Listas com produtos
@@ -16,37 +19,34 @@ List<Produto> listaDeProdutos = new List<Produto>
 
 app.MapGet("/", () => "API de Produtos");
 
-app.MapGet("/api/produto/listar", () =>
+app.MapGet("/api/produto/listar", ([FromServices] AppDataContext ctx) =>
 {
-    if (listaDeProdutos.Count == 0)
+    if (ctx.Produtos.Count() > 0)
     {
-        Console.WriteLine("A lista esta vazia");
-        return Results.NoContent();
+       return Results.Ok(ctx.Produtos.ToList());
     }
-    return Results.Ok(listaDeProdutos);
+     Console.WriteLine("A lista esta vazia");
+     return Results.NoContent();
 });
 
-app.MapPost("/api/produto/cadastrar", ([FromBody] Produto produto) =>
+// Cadastrar Produto
+app.MapPost("/api/produto/cadastrar", ([FromBody] Produto nome, [FromServices] AppDataContext ctx) =>
 {
-    foreach (Produto produtoCadastrado in listaDeProdutos)
-    {
-        if (produtoCadastrado.Nome == produto.Nome)
-        {
-            return Results.Conflict("Produto ja cadastrado!");
-        }
-    }
 
-    listaDeProdutos.Add(produto);
-    return Results.Created("", produto);
+    return Results.Ok(nome);
+    ctx.Produtos.Add(nome);
+    ctx.SaveChanges();
+    return Results.Created("", nome);
 
 });
 
-app.MapGet("/api/produto/buscar/{nome}", ([FromRoute] string nome) =>
+// Buscar pelo nome
+app.MapGet("/api/produto/buscar/{nome}", ([FromRoute] string nome, [FromServices] AppDataContext ctx) =>
 {
     //Expressão lambda
     // Produto resultado = listaDeProdutos.FirstOrDefault(x => x.Nome.Contains(nome));
 
-    Produto? resultado = listaDeProdutos.FirstOrDefault(x => x.Nome == nome);
+    Produto? resultado = ctx.Produtos.FirstOrDefault(x => x.Nome == nome);
     if (resultado == null)
     {
         return Results.NotFound("Produto não encontrado");
@@ -55,7 +55,8 @@ app.MapGet("/api/produto/buscar/{nome}", ([FromRoute] string nome) =>
 
 });
 
-app.MapDelete("/api/produto/deletar/{nome}", ([FromRoute] string nome) =>
+// Deletar Produtos 
+app.MapDelete("/api/produto/deletar/{nome}", ([FromRoute] string nome, [FromServices] AppDataContext ctx) =>
 {
     Produto? deletado = listaDeProdutos.FirstOrDefault(x => x.Nome == nome);
     if (deletado == null)
