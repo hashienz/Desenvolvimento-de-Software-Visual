@@ -1,39 +1,32 @@
 import { useState } from "react";
 import Produto from "../../../models/Produto";
+import axios from "axios";
 
 function CadastrarProduto(){
     const[nome, setNome] = useState("");
+    const[descricao, setDescricao] = useState("");
+    const[preco, setPreco] = useState();
+    const[quantidade, setQuantidade] = useState( );
 
     function enviarProduto(event : any){
         event.preventDefault();
         submeterProdutoAPI();
-
-
-
-
     }
 
     async function submeterProdutoAPI(){
-        // Olhar biblioteca axios
-
-
+    try {
         const produto : Produto = {
-            nome : nome,
-            descricao : "Teste",
-            preco : 123,
-            quantidade : 12
-
+            nome,
+            descricao,
+            preco,
+            quantidade,
         };
 
-        const resposta = 
-        await fetch("http://localhost:5055/api/produto/cadastrar", {
-            method : "POST",
-            headers : {
-                "Content-Type" : "application/json"
-            },
-            body : JSON.stringify(produto)
-        });
-
+    const resposta = await axios.post("http://localhost:5055/api/produto/cadastrar", produto);
+    
+    } catch (error) {
+         console.log(error);
+        }
     }
     function escreverNome(event : any){
         setNome(event.target.valaue);
@@ -47,7 +40,7 @@ function CadastrarProduto(){
                     <input onChange={escreverNome} type="text"/>
                 </div>
                 <label>Descrição:</label>
-                <input type="text" />
+                <input type="text" onChange={(e:any) => setDescricao} />
                 <div>
                     <div>
                         <button type="submit">Cadastrar</button>
