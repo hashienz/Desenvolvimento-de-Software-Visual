@@ -2,26 +2,32 @@ import React from 'react';
 import ListarProdutos from './components/pages/produto/ListarProdutos';
 import CadastrarProduto from './components/pages/produto/CadastrarProduto';
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import AlterarProduto from './components/pages/produto/AlterarProduto';
 
 //Componentes
 // - HTML, CSS e JS ou TS
 function App() {
   return (
-    <div id ="app">
+    <div id="app">
       <BrowserRouter>
         <nav>
           <ul>
-            <li><Link to = "/">Listar Produtos</Link></li>
-            <li><Link to = "produto/cadastrar">Cadastrar Produto</Link></li>
+            <li>
+              <Link to="/">Listar Produtos</Link>
+            </li>
+            <li>
+              <Link to="/produto/cadastrar"> Cadastrar Produtos </Link>
+            </li>
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element = {<ListarProdutos/>}/>
-          <Route path="/produto/cadastrar" element = {<ListarProdutos/>}/>
+          <Route path="/" element={<ListarProdutos/>} />
+          <Route path="/produto/cadastrar" element={<CadastrarProduto/>} />
+          <Route path="/produto/alterar/:id" element={<AlterarProduto/>} />
         </Routes>
-        <footer>
-          Rodapé da Aplicação
-        </footer>
+        {/* <footer>
+          Rodapé da aplicação
+        </footer> */}
       </BrowserRouter>
     </div>
   );
